@@ -1,0 +1,62 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in, top=20pt]{geometry}
+\usepackage{amsmath, amssymb}
+\title{CS 225}
+\author{Symbols and Formulas}
+\date{Fall 2020}
+
+\begin{document}
+\maketitle
+\hrule
+
+\begin{center}\underline{\bf \large Logic}\end{center}
+
+\underline{\bf Symbols:} $\geq \ \leq \ \neq \ \neg \ \sim \ \wedge \ \vee \ \oplus \ \equiv \ \rightarrow \ \leftrightarrow \ \square \ \exists \ \forall$
+\bigskip
+
+\begin{minipage}[b]{0.5\textwidth}
+\underline{\bf Identities:} 
+\begin{align*}
+    &\sim (\sim p) \equiv p &&\text{Double Negation} \\
+    &p \wedge \mathbb{T} \equiv p \ \ \ \ p \vee \mathbb{F} \equiv p &&\text{Identity} \\
+    &p \vee \mathbb{T} \equiv \mathbb{T} \ \ \ \ p \wedge \mathbb{F} \equiv \mathbb{F} &&\text{Domination} \\
+    &p \wedge p \equiv p \ \ \ \ p \vee p \equiv p &&\text{Idempotent} \\
+    &p \vee q \equiv q \vee p \ \ \ \ p \wedge q \equiv q \wedge p &&\text{Commutative} \\
+    &(p \vee q) \vee r \equiv p \vee (q \vee r) &&\text{Associative} \\
+    &(p \wedge q) \wedge r \equiv p \wedge (q \wedge r) &&\text{Associative} \\
+    &p \vee (q \wedge r) \equiv (p \vee q) \wedge (p \vee r) &&\text{Distributive} \\
+    &p \wedge (q \vee r) \equiv (p \wedge q) \vee (p \wedge r) &&\text{Distributive} \\
+    &\sim (p \wedge q) \equiv \sim p \vee \sim q &&\text{DeMorgan's} \\
+    &\sim(p \vee q) \equiv \sim p \wedge \sim q &&\text{Demorgan's} \\
+    &p \vee (p \wedge q) \equiv p &&\text{Absorption} \\
+    &p \wedge (p \vee q) \equiv p &&\text{Absorption} \\
+    &p \rightarrow q \equiv \sim q \rightarrow \sim p &&\text{Contrapositive} \\
+    &p \oplus q \equiv q \oplus p &&\text{Contrapositive} \\
+    &p \rightarrow q \equiv \sim p \vee q &&\text{Implication} \\
+    &p \leftrightarrow q \equiv (p \rightarrow q) \wedge (q \rightarrow p) &&\text{Biconditional Equivalence} \\
+    &(p \wedge q) \rightarrow r \equiv p \rightarrow (q \rightarrow r) &&\text{Exporation} \\
+    &(p \rightarrow q) \wedge (p \rightarrow \sim q) \equiv \sim p &&\text{Absurdity} \\
+    &p \vee q \equiv \sim p \rightarrow q &&\text{Alternate Implication} \\
+    &p \wedge q \equiv \sim(p \rightarrow \sim q) &&\text{Alternate Implication} \\
+    &\sim(p \rightarrow q) \equiv p \wedge \sim q &&\text{Alternate Implication} \\
+    &\sim \ \forall \ x P(x) \equiv \ \exists \ x \sim P(x) &&\text{DeMorgan's for Quantifiers} \\
+    &\sim \ \exists \ x Q(x) \equiv \ \forall \ x \sim Q(x) &&\text{DeMorgan's for Quantifiers} 
+\end{align*}
+\end{minipage}
+\begin{minipage}[t]{0.4 \textwidth}
+A conditional statement $p \rightarrow q$ can also be read as:
+\begin{itemize}
+    \item If $p$ then $q$ 
+    \item $p$ implies $q$
+    \item If $p$, $q$
+    \item $p$ only if $q$
+    \item $q$ if $p$
+    \item $q$ unless $\sim p$
+    \item $q$ when $p$
+    \item $q$ whenever $p$
+    \item $q$ follows from $p$
+    \item $p$ is a sufficient condition for $q$ ($p$ is sufficient for $q$)
+    \item $q$ is a necessary condition for $p$ ($q$ is necessary for $p$)
+\end{itemize}
+\end{minipage}
+\end{document}
