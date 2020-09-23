@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
-\usepackage[margin=1in, top=20pt]{geometry}
-\usepackage{amsmath, amssymb}
+\usepackage[margin=1in, top=15pt]{geometry}
+\usepackage{amsmath, amssymb, xcolor}
 \title{CS 225}
 \author{Symbols and Formulas}
 \date{Fall 2020}
@@ -10,11 +10,12 @@
 \hrule
 
 \begin{center}\underline{\bf \large Logic}\end{center}
+\bigskip
 
 \underline{\bf Symbols:} $\geq \ \leq \ \neq \ \neg \ \sim \ \wedge \ \vee \ \oplus \ \equiv \ \rightarrow \ \leftrightarrow \ \square \ \exists \ \forall$
 \bigskip
 
-\begin{minipage}[b]{0.5\textwidth}
+\begin{minipage}[c]{0.4\textwidth}
 \underline{\bf Identities:} 
 \begin{align*}
     &\sim (\sim p) \equiv p &&\text{Double Negation} \\
@@ -43,7 +44,8 @@
     &\sim \ \exists \ x Q(x) \equiv \ \forall \ x \sim Q(x) &&\text{DeMorgan's for Quantifiers} 
 \end{align*}
 \end{minipage}
-\begin{minipage}[t]{0.4 \textwidth}
+{\color{lightgray}\vline}
+\begin{minipage}[t][3.1in][b]{0.4 \textwidth}
 A conditional statement $p \rightarrow q$ can also be read as:
 \begin{itemize}
     \item If $p$ then $q$ 
@@ -58,5 +60,35 @@ A conditional statement $p \rightarrow q$ can also be read as:
     \item $p$ is a sufficient condition for $q$ ($p$ is sufficient for $q$)
     \item $q$ is a necessary condition for $p$ ($q$ is necessary for $p$)
 \end{itemize}
+
+\bigskip
+
+\underline{\bf Proofs:}
+\begin{itemize}
+    \item Direct: Assume $P$ and prove $Q$.
+    \item Contrapositive: Assume Not $Q$ and prove Not $P$.
+    \item Contradiction: Assume $P$ and Not $Q$ and prove a contradiction.
+    \item Induction: Prove base(s), assume $P(m)$, prove $P(m+1)$.
+\end{itemize}
 \end{minipage}
+
+\newpage
+
+\begin{center}\underline{\bf \large Sets}\end{center}
+\bigskip
+
+\underline{\bf Symbols:} $\in \ \not\in \ \subseteq \ \subset \ \supseteq \ \supset \ \varnothing \ \cup \ \cap \ \times$
+\bigskip
+
+\underline{\bf Common Sets:} 
+\begin{align*}
+    &\mathbb{N} = \{0, 1, 2, 3, \dots\}  &&\text{natural numbers} \\
+    &\mathbb{Z} = \{\dots, -3, -2, -1, 0, 1, 2, 3, \dots \}  &&\text{integers ($\mathbb{Z}$ for German Zahlen, meaning "integers")} \\
+    &\mathbb{Z^+} = \{1,2,3,\dots\}  &&\text{positive integers} \\
+    &\mathbb{Q} = \left\{ \dfrac{p}{q} \ \Big| \ p \in \mathbb{Z}, q \in \mathbb{Z}, q \neq 0\right\}  &&\text{rational numbers} \\
+    &\mathbb{U} = \{*\}  &&\text{universal set}
+\end{align*}
+\bigskip
+
+\underline{\bf Identities:}
 \end{document}
