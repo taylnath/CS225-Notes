@@ -1,6 +1,6 @@
 # CS225-Notes
 Symbols and Formulas for CS 225. This is a LaTeX version of the original course notes sheet "Notes_symbols_formulas.pdf". You can find the current PDF document (as well as the .tex document)
-in the symbols_formulas folder, or ![here](symbols_formulas/symbols_formulas.pdf). 
+in the symbols_formulas folder, or [here](symbols_formulas/symbols_formulas.pdf). 
 
 There have been 3 main versions so far:
 - The original version, which was as close to an exact copy of the "Notes_symbols_formulas.pdf" as I could make.
