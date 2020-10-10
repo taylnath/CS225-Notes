@@ -1,0 +1,126 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in, top=15pt]{geometry}
+\usepackage{amsmath, amssymb, amsthm, xcolor, booktabs, graphicx}
+\usepackage{enumitem}
+\title{CS 225}
+\author{Theorems from Chapter 4}
+\date{Fall 2020}
+
+\begin{document}
+\maketitle
+\hrule
+
+\section*{From 4.1:}
+\subsection*{Assumptions:}
+\begin{itemize}
+    \item Basic laws of algebra from appendix $A$ (I assume we do not have to cite these--I listed some on
+    the last page of this document)
+    \item Properties of equality: $x = x$, $x = y \implies y = x$, $x = y \text{ and } y = z \implies x = z$
+    \item Principle of substitution: if $x = y$, then we can substitute in $y$ wherever $x$ appears. 
+    \item The integers are closed under addition, subtraction and multiplication. (The book also 
+    mentions that there is no integer between 0 and 1--does that need to be an assumption??)
+\end{itemize}
+
+\subsection*{Definitions:}
+\begin{itemize}
+    \item An integer $n$ is {\bf even} if and only if 
+    it can be written as $n = 2k$ for some integer $k$. 
+    \item An integer $n$ is {\bf odd} if and only if 
+    it can be written as $n = 2k + 1$ for some integer $k$. 
+    \item An integer $n$ is {\bf prime} if and only if 
+    $n > 1$ and for all positive integers $r$ and $s$, if 
+    $n = rs$, then either $r$ or $s$ equals $n$. 
+    \item An integer $n$ is {\bf composite} if and only if
+    $n > 1$ and $n = rs$ for some integers $r$ and $s$ with
+    $1< r< n$ and $1< s< n$. 
+\end{itemize}
+
+\subsection*{Theorem 4.1.1}
+The sum of any two even integers is even. 
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{From 4.2:}
+\subsection*{Theorem 4.2.1:}
+The difference of any odd integer and any even integer is odd. 
+
+\bigskip
+\hrule
+\bigskip
+
+\newpage
+\newgeometry{top=1in}
+
+\section*{From 4.3:}
+\subsection*{Definition:}
+A real number $r$ is {\bf rational} if and only if 
+there are integers $a$ and $b$ with $b \neq 0$ so that
+$r = \dfrac{a}{b}$
+
+\subsection*{Property:}
+The zero product property is: if neither of two 
+real numbers is zero, then their product is also not zero. (
+    this is T11 in appendix A)
+
+\subsection*{Theorem 4.3.1:}
+Every integer is a rational number.
+
+\subsection*{Theorem 4.3.2:}
+The sum of any two rational numbers is a rational number. 
+
+\subsection*{Corollary 4.2.3:}
+The double of a rational number is a rational number. 
+
+\subsection*{Result of Exercise 12:}
+The square of any rational number is a rational number. 
+
+\subsection*{Result of Exercise 13:}
+The negative of any rational number is a rational number. 
+
+\subsection*{Result of Exercise 14:}
+The cube of any rational number is a rational number. 
+
+\subsection*{Result of Exercise 15:}
+The product of any two rational numbers is a rational number. 
+
+\subsection*{Result of Exercise 17:}
+The difference of any two rational numbers is a rational number. 
+
+\newpage
+\section*{From Appendix A:}
+\begin{itemize}
+    \item Field Axioms for real numbers:
+    \begin{enumerate}[label=F\arabic*]
+        \item Commutative laws for addition and multiplication
+        \item Associative laws for addition and multiplication
+        \item Distributive laws
+        \item Existence of an identity for addition and multiplication
+        \item Existence of additive inverses (negative numbers)
+        \item Existence of multiplicative inverses (reciprocals)
+    \end{enumerate}
+    \item Other theorems:
+    \begin{enumerate}[label=T\arabic*]
+        \item Cancellation law for addition: $a + b = a + c \implies b = c$
+        \item Possibility of subtraction: There is a unique solution to $a + x = b$ (namely $x = b - a$)
+        \item $b - a = b + (-a)$
+        \item $-(-a) = a$
+        \item $a(b - c) = ab - ac$
+        \item $0\cdot a = a\cdot 0 = 0$
+        \item Cancellation law for multiplication: $ab = ac \text{ and } a \neq 0 \implies b = c$
+        \item Possibility of division: If $a \neq 0$, there is a unique solution to $ax = b$. (namely $x = b/a$)
+        \item If $a \neq 0$, $\dfrac{b}{a} = b \cdot a^{-1}$
+        \item If $a \neq 0$, $(a^{-1})^{-1} = a$
+        \item Zero product property: If $ab = 0$, then $a = 0$ or $b = 0$
+        \item $(-a) b = a(-b) = - (ab)$, $(-a)(-b) = ab$, $$-\dfrac{a}{b} = \dfrac{-a}{b} = \dfrac{a}{-b}$$
+        \item Equivalent fractions property: $\dfrac{a}{b} = \dfrac{ac}{bc}$ if $b\neq 0$ and $c\neq 0$
+        \item Fraction addition: $\dfrac{a}{b} + \dfrac{c}{d} = \dfrac{ad + bc}{bd}$ if $b\neq 0$ and $d\neq 0$
+        \item Multiplying fractions: $\dfrac{a}{b} \cdot \dfrac{c}{d} = \dfrac{ac}{bd}$ 
+        \item Dividing fractions: $\dfrac{a/b}{c/d} = \dfrac{a}{b} \cdot \dfrac{d}{c}$
+    \end{enumerate}
+    \item Order Axioms (see the appendix on page A-2)
+    \item Order Theorems (see the appendix A-3)
+    \item Least upper bound axiom (see the appendix A-3)
+\end{itemize}
+\end{document}
