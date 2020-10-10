@@ -9,7 +9,7 @@
 \maketitle
 \hrule
 
-\begin{center}\underline{\bf \large Logic}\end{center}
+\begin{center}\underline{\bf \huge Logic}\end{center}
 \bigskip
 
 \underline{\bf Symbols:} $\geq \ \leq \ \neq \ \neg \ \sim \ \wedge \ \vee \ \oplus \ \equiv \ \rightarrow \ \leftrightarrow \ \square \ \exists \ \forall$
@@ -22,26 +22,27 @@
     &p \wedge \mathbb{T} \equiv p \ \ \ \ p \vee \mathbb{F} \equiv p &&\text{Identity} \\
     &p \vee \mathbb{T} \equiv \mathbb{T} \ \ \ \ p \wedge \mathbb{F} \equiv \mathbb{F} &&\text{Domination} \\
     &p \wedge p \equiv p \ \ \ \ p \vee p \equiv p &&\text{Idempotent} \\
+    &p \ \vee \sim p \equiv \mathbb{T} \ \ \ \ p \ \wedge \sim p \equiv \mathbb{F} &&\text{Negation} \\
     &p \vee q \equiv q \vee p \ \ \ \ p \wedge q \equiv q \wedge p &&\text{Commutative} \\
     &(p \vee q) \vee r \equiv p \vee (q \vee r) &&\text{Associative} \\
     &(p \wedge q) \wedge r \equiv p \wedge (q \wedge r) &&\text{Associative} \\
     &p \vee (q \wedge r) \equiv (p \vee q) \wedge (p \vee r) &&\text{Distributive} \\
     &p \wedge (q \vee r) \equiv (p \wedge q) \vee (p \wedge r) &&\text{Distributive} \\
-    &\sim (p \wedge q) \equiv \sim p \vee \sim q &&\text{DeMorgan's} \\
-    &\sim(p \vee q) \equiv \sim p \wedge \sim q &&\text{Demorgan's} \\
+    &\sim (p \wedge q) \equiv \ \sim p \ \vee \sim q &&\text{DeMorgan's} \\
+    &\sim(p \vee q) \equiv \ \sim p \ \wedge \sim q &&\text{DeMorgan's} \\
     &p \vee (p \wedge q) \equiv p &&\text{Absorption} \\
     &p \wedge (p \vee q) \equiv p &&\text{Absorption} \\
-    &p \rightarrow q \equiv \sim q \rightarrow \sim p &&\text{Contrapositive} \\
+    &p \rightarrow q \equiv \ \sim q \rightarrow \ \sim p &&\text{Contrapositive} \\
     &p \oplus q \equiv q \oplus p &&\text{Contrapositive} \\
-    &p \rightarrow q \equiv \sim p \vee q &&\text{Implication} \\
+    &p \rightarrow q \equiv \ \sim p \vee q &&\text{Implication} \\
     &p \leftrightarrow q \equiv (p \rightarrow q) \wedge (q \rightarrow p) &&\text{Biconditional Equivalence} \\
     &(p \wedge q) \rightarrow r \equiv p \rightarrow (q \rightarrow r) &&\text{Exporation} \\
-    &(p \rightarrow q) \wedge (p \rightarrow \sim q) \equiv \sim p &&\text{Absurdity} \\
-    &p \vee q \equiv \sim p \rightarrow q &&\text{Alternate Implication} \\
-    &p \wedge q \equiv \sim(p \rightarrow \sim q) &&\text{Alternate Implication} \\
-    &\sim(p \rightarrow q) \equiv p \wedge \sim q &&\text{Alternate Implication} \\
-    &\sim \ \forall \ x P(x) \equiv \ \exists \ x \sim P(x) &&\text{DeMorgan's for Quantifiers} \\
-    &\sim \ \exists \ x Q(x) \equiv \ \forall \ x \sim Q(x) &&\text{DeMorgan's for Quantifiers} 
+    &(p \rightarrow q) \wedge (p \rightarrow \ \sim q) \equiv \ \sim p &&\text{Absurdity} \\
+    &p \vee q \equiv \ \sim p \rightarrow q &&\text{Alternate Implication} \\
+    &p \wedge q \equiv \ \sim(p \rightarrow \ \sim q) &&\text{Alternate Implication} \\
+    &\sim(p \rightarrow q) \equiv p \ \wedge \sim q &&\text{Alternate Implication} \\
+    &\sim \Big( \forall \ x \ P(x) \Big) \equiv \ \exists \ x \ \sim P(x) &&\text{DeMorgan's for Quantifiers} \\
+    &\sim \Big( \exists \ x \ Q(x) \Big) \equiv \ \forall \ x \ \sim Q(x) &&\text{DeMorgan's for Quantifiers} 
 \end{align*}
 \end{minipage}
 {\color{lightgray}\vline}
@@ -73,8 +74,9 @@ A conditional statement $p \rightarrow q$ can also be read as:
 \end{minipage}
 
 \newpage
+\newgeometry{top=1in}
 
-\begin{center}\underline{\bf \large Sets}\end{center}
+\begin{center}\underline{\bf \huge Sets}\end{center}
 \bigskip
 
 \underline{\bf Symbols:} $\in \ \not\in \ \subseteq \ \subset \ \supseteq \ \supset \ \varnothing \ \cup \ \cap \ \times$
@@ -83,7 +85,7 @@ A conditional statement $p \rightarrow q$ can also be read as:
 \underline{\bf Common Sets:} 
 \begin{align*}
     &\mathbb{N} = \{0, 1, 2, 3, \dots\}  &&\text{natural numbers} \\
-    &\mathbb{Z} = \{\dots, -3, -2, -1, 0, 1, 2, 3, \dots \}  &&\text{integers ($\mathbb{Z}$ for German Zahlen, meaning "integers")} \\
+    &\mathbb{Z} = \{\dots, -3, -2, -1, 0, 1, 2, 3, \dots \}  &&\text{integers ($\mathbb{Z}$ for German Zahlen, meaning ``integers")} \\
     &\mathbb{Z^+} = \{1,2,3,\dots\}  &&\text{positive integers} \\
     &\mathbb{Q} = \left\{ \dfrac{p}{q} \ \Big| \ p \in \mathbb{Z}, q \in \mathbb{Z}, q \neq 0\right\}  &&\text{rational numbers} \\
     &\mathbb{U} = \{*\}  &&\text{universal set}
@@ -106,9 +108,9 @@ A conditional statement $p \rightarrow q$ can also be read as:
     &A \cup (A \cap B) = A &&\text{Absorption} \\
     &A \cap (A \cup B) = A &&\text{Absorption}
 \end{align*}
+\bigskip
 
-
-\begin{center}\underline{\bf \large Series and Sums}\end{center}
+\begin{center}\underline{\bf \huge Series and Sums}\end{center}
 \bigskip
 
 \underline{\bf Symbols:} $\sum \ \cdot$
@@ -122,7 +124,7 @@ A conditional statement $p \rightarrow q$ can also be read as:
 
 
 \newpage
-\begin{center}\underline{\bf \large Counting}\end{center}
+\begin{center}\underline{\bf \huge Counting}\end{center}
 \bigskip
 
 \underline{\bf Symbols:} $\lambda$
