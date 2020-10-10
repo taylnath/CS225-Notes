@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage[margin=1in, top=15pt]{geometry}
-\usepackage{amsmath, amssymb, xcolor, booktabs, setspace}
+\usepackage{amsmath, amssymb, xcolor, booktabs, graphicx}
 \title{CS 225}
 \author{Symbols and Formulas}
 \date{Fall 2020}
@@ -125,19 +125,34 @@ A conditional statement $p \rightarrow q$ can also be read as:
 \bigskip
 \begin{center}\underline{\bf Sum Formulas:} \end{center}
 \begin{center}
-\setstretch{2}
+\scalebox{1.2}{
 \begin{tabular}{clll}
 \toprule
 Formula \# & Sum & Closed Form & Comments \\
 \midrule
+\addlinespace
+\addlinespace
 1 & $\sum\limits_{k=0}^n ar^k \ (r\neq 0)$ & $\dfrac{ar^{n+1} - a}{r-1}, \ r \neq 1$ & If $r=1$, formula (3) applies. \\
+\addlinespace
+\addlinespace
 2 & $\sum\limits_{k=i}^n ar^k \ (r \neq 0)$ & $\dfrac{ar^{n+1} - ar^i}{r-1}, \ r \neq 1$ & This sum is the same as $\sum\limits_{k=0}^n ar^k - \sum\limits_{k=0}^{i-1} ar^k$ \\
+\addlinespace
+\addlinespace
 3 & $\sum\limits_{k=i}^n c$ & $c \cdot ( n- i + 1)$ & Setting $i = 0$ gives $\sum\limits_{k = 0}^n c = c\cdot (n + 1)$ \\ 
+\addlinespace
+\addlinespace
 4 & $\sum\limits_{k=1}^n k$ & $\dfrac{n (n + 1)}{2}$ & $\sum\limits_{k=0}^n k = \sum\limits_{k=1}^n k$ \\
+\addlinespace
+\addlinespace
 5 & $\sum\limits_{k=1}^n k^2$ & $\dfrac{n(n+1)(2n+1)}{6}$ & \\
+\addlinespace
+\addlinespace
 6 & $\sum\limits_{k=1}^n k^3$ & $\dfrac{n^2(n+1)^2}{4}$ & \\
+\addlinespace
+\addlinespace
 \bottomrule
 \end{tabular}
+}
 \end{center}
 
 \newpage
