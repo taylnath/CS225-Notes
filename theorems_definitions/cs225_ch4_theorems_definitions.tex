@@ -3,7 +3,7 @@
 \usepackage{amsmath, amssymb, amsthm, xcolor, booktabs, graphicx}
 \usepackage{enumitem}
 \title{CS 225}
-\author{Theorems from Chapter 4}
+\author{Some Definitions and Theorems from Chapter 4}
 \date{Fall 2020}
 
 \begin{document}
@@ -87,6 +87,98 @@ The product of any two rational numbers is a rational number.
 
 \subsection*{Result of Exercise 17:}
 The difference of any two rational numbers is a rational number. 
+
+\newpage
+\section*{From 4.4:}
+
+\subsection*{Definition:}
+If $n$ and $d$ are integers, then $n$ is {\bf divisible by} 
+$d$ if and only if $d \neq 0$ and $n = kd$ for some integer 
+$k$. 
+
+Some synonyms for ``$d$ divides $n$'':
+\begin{itemize}
+    \item $n$ is a multiple of $d$
+    \item $d$ is a factor of $n$
+    \item $d$ is a divisor of $n$
+    \item $d$ divides $n$
+    \item $d \mid n$
+\end{itemize}
+
+The notation $d \nmid n$ means ``$d$ does not divide $n$''. 
+
+\subsection*{Theorem 4.4.1:} 
+For all integers $a$ and $b$, if $a$ and $b$ are positive 
+and $a$ divides $b$ then $a \leq b$. 
+
+\subsection*{Theorem 4.4.2:}
+The only divisors of 1 are 1 and $-1$. 
+
+\subsection*{Theorem 4.4.3:}
+For all integers $a,b$ and $c$, if $a$ divides $b$ and $b$ 
+divides $c$, then $a$ divides $c$. 
+
+\subsection*{Theorem 4.4.4:}
+Any integer $n > 1$ is divisible by a prime number. 
+
+\subsection*{Theorem 4.4.5:}
+Given any integer $n > 1$ there exists a positive integer 
+$k$, distinct prime numbers $p_1,p_2 \dots, p_k$, 
+and positive integers $e_1,e_2, \dots, e_k$ such that
+$$
+n = p_1^{e_1} p_2^{e_2} \dots p_k^{e_k} = \prod_{i = 1}^k p_i^{e_i}
+$$
+and any other expression for $n$ as a product of prime numbers 
+is identical to this except perhaps for the order in which 
+the factors are written. 
+
+\subsection*{Definition:}
+Given any integer $n> 1$, the {\bf standard factored form} 
+of $n$ is an expression of the form
+$$
+n = p_1^{e_1} p_2^{e_2} \dots p_k^{e_k} = \prod_{i = 1}^k p_i^{e_i}
+$$
+where $k$ is a positive integer, $p_1, \dots, p_k$ are 
+prime numbers, $e_1, \dots, e_k$ are positive integers, 
+and $p_1 < p_2 < \dots < p_k$. 
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{From 4.7:}
+
+\subsection*{Theorem 4.7.1:}
+There is no greatest integer.
+
+\subsection*{Theorem 4.7.2:}
+There is no integer that is both even and odd.
+
+\subsection*{Theorem 4.7.3:}
+The sum of any rational number and any irrational number is irrational. 
+
+\subsection*{Proposition 4.7.4:}
+For every integer $n$, if $n^2$ is even then $n$ is even. 
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{From 4.8:}
+
+\subsection*{Theorem 4.8.1:}
+$\sqrt{2}$ is irrational. 
+
+\subsection*{Proposition 4.8.2:}
+$1 + 3 \sqrt{2}$ is irrational. 
+
+\subsection*{Proposition 4.8.3:}
+For any integer $a$ and any prime number $p$, if $p \mid a$
+then $p \nmid (a + 1)$. 
+
+\subsection*{Theorem 4.8.4:}
+The set of prime numbers is infinite (i.e. there are 
+infinitely many prime numbers).
 
 \newpage
 \section*{From Appendix A:}
