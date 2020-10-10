@@ -14,6 +14,8 @@ Please let me know if you find any typos in this document, or if you have sugges
 
 --Nathan
 
+taylnath@oregonstate.edu
+
 *Last updated Friday October 9, 2020*
 
 # Contributing
