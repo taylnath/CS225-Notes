@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage[margin=1in, top=15pt]{geometry}
-\usepackage{amsmath, amssymb, xcolor}
+\usepackage{amsmath, amssymb, xcolor, booktabs, setspace}
 \title{CS 225}
 \author{Symbols and Formulas}
 \date{Fall 2020}
@@ -110,18 +110,35 @@ A conditional statement $p \rightarrow q$ can also be read as:
 \end{align*}
 \bigskip
 
+\newpage
 \begin{center}\underline{\bf \huge Series and Sums}\end{center}
 \bigskip
 
 \underline{\bf Symbols:} $\sum \ \cdot$
 \bigskip
 
-\underline{\bf Sum equations:} 
 \begin{align*}
-    &\text{Geometric Progression} &&a_k = a \cdot r^k &&\sum_{k=0}^n a_k = a\cdot \sum_{k=0}^n r^k = a \cdot \dfrac{r^{n+1} - 1}{r-1} \\
-    &\text{Arithmetic Progression} &&a_k = a + d\cdot k &&\sum_{k=1}^n k = \dfrac{1}{2}(n^2 + n)
+    &\text{Geometric Progression} &&a_k = a \cdot r^k \\ %&&\sum_{k=0}^n a_k = a\cdot \sum_{k=0}^n r^k = a \cdot \dfrac{r^{n+1} - 1}{r-1} \\
+    &\text{Arithmetic Progression} &&a_k = a + d\cdot k \\ %&&\sum_{k=1}^n k = \dfrac{1}{2}(n^2 + n)
 \end{align*}
 
+\bigskip
+\begin{center}\underline{\bf Sum Formulas:} \end{center}
+\begin{center}
+\setstretch{2}
+\begin{tabular}{clll}
+\toprule
+Formula \# & Sum & Closed Form & Comments \\
+\midrule
+1 & $\sum\limits_{k=0}^n ar^k \ (r\neq 0)$ & $\dfrac{ar^{n+1} - a}{r-1}, \ r \neq 1$ & If $r=1$, formula (3) applies. \\
+2 & $\sum\limits_{k=i}^n ar^k \ (r \neq 0)$ & $\dfrac{ar^{n+1} - ar^i}{r-1}, \ r \neq 1$ & This sum is the same as $\sum\limits_{k=0}^n ar^k - \sum\limits_{k=0}^{i-1} ar^k$ \\
+3 & $\sum\limits_{k=i}^n c$ & $c \cdot ( n- i + 1)$ & Setting $i = 0$ gives $\sum\limits_{k = 0}^n c = c\cdot (n + 1)$ \\ 
+4 & $\sum\limits_{k=1}^n k$ & $\dfrac{n (n + 1)}{2}$ & $\sum\limits_{k=0}^n k = \sum\limits_{k=1}^n k$ \\
+5 & $\sum\limits_{k=1}^n k^2$ & $\dfrac{n(n+1)(2n+1)}{6}$ & \\
+6 & $\sum\limits_{k=1}^n k^3$ & $\dfrac{n^2(n+1)^2}{4}$ & \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \newpage
 \begin{center}\underline{\bf \huge Counting}\end{center}
@@ -159,7 +176,8 @@ $$ |D| = |A| + |B| - |A\cap B| $$
 indistinguishable objects of type 1, and $n_2$ indistinguishable objects
 of type 2, \dots and $n_k$ indistinguishable objects of type $k$ is $\dfrac{n!}{n_1! n_2! \dots n_k!}$
     \item $r$-combinations $C(n,r) = \dfrac{n!}{r!(n-r)!}$
-    \item $r$-combinations with repetition allowed: $C(n+r-1,r) = \dfrac{(n+r-1)!}{r!(n+r-1-r)!} = \dfrac{(n+r-1)!}{r!(n-1)!}$
+    \item $r$-combinations with repetition allowed: 
+    $$C(n+r-1,r) = \dfrac{(n+r-1)!}{r!(n+r-1-r)!} = \dfrac{(n+r-1)!}{r!(n-1)!}$$
 \end{itemize}
 
 \end{document}
