@@ -13,6 +13,7 @@ There have been 3 main versions so far:
 Please let me know if you find any typos in this document, or if you have suggestions for improvement!
 
 --Nathan
+
 taylnath@oregonstate.edu
 
 *Last updated Friday October 9, 2020*
