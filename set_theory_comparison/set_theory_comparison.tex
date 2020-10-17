@@ -2,7 +2,7 @@
 \usepackage[margin=1in, top=15pt]{geometry}
 \usepackage{amsmath, amssymb, xcolor, booktabs, graphicx}
 \title{CS 225}
-\author{Set Theory and Logic}
+\author{{\Large Set Theory and Logic} \\ {\small By Nathan Taylor}}
 \date{Fall 2020}
 
 \begin{document}
@@ -19,6 +19,11 @@ pictures to reason about the identities, but since we have covered logic first i
 CS225, perhaps the logical rules are more fresh in everyone's mind. In any case, 
 I think it is useful to compare the two. 
 
+\bigskip 
+When reading through set theory notation, you may want to draw a venn diagram with 
+sets $A$ and $B$ contained in some universal set $\mathbb{U}$ to help understand the 
+notation. 
+
 \bigskip
 Here is a table comparing logical symbols/operations to set theoretic ones:
 
@@ -26,92 +31,133 @@ In the table I will refer to two sets $A$ and $B$ which are both contained
 in some universal set $\mathbb{U}$. You can think of $\mathbb{U}$ as the 
 domain of $x$. 
 
+Note: I do not claim that each of these is exactly equivalent! Just a strong 
+relation. 
+
 \begin{center}
+    {\bf Symbols in Set Theory vs. Logic}
+
 \begin{tabular}{lllll}
 \toprule
-Word & Logic Symbol & Set Theory Symbol & Set Theory Connection  \\
+Word & Logic & Set Theory & Set Theory Connection  \\
 \midrule
 Or   &     $\vee$   &         $\cup$    &  $\forall \ x \in \mathbb{U}$, $x \in A\cup B$ if and only if $x \in A$ {\bf or} $x\in B$. \\
 And  &     $\wedge$ &         $\cap$    &  $\forall \ x \in \mathbb{U}$, $x \in A \cap B$ if and only if $x \in A$ {\bf and} $x \in B$. \\
 Not  &     $\sim$   &   $\phantom{h}^c$ & $\forall \ x \in \mathbb{U}$, $x\in A^c$ if and only if $x$ is {\bf not} in $A$. \\
 If / then & $\to$   &  $\subseteq$      & ``$A \subseteq B$'' if and only if ``$\forall \ x \in \mathbb{U}$, {\bf if} $x\in A$ {\bf then} $x\in B$.'' \\
+True & $\mathbb{T}$ or T & $\mathbb{U}$ & $\forall \ x\in \mathbb{U}$, $x \in \mathbb{U}$ is always true\\
+False & $\mathbb{F}$ or F & $\varnothing$ & $\forall \ x\in \mathbb{U}$, $x$ is not in $\varnothing$. \\
+Equivalent & $\equiv$ &  $=$ \ \ \ \  ``if and only if''    \\
 \bottomrule
 \end{tabular}
 \end{center}
 
+\bigskip
+\begin{center}\underline{\bf \Large Comparison of Set Theory and Logic Identities}\end{center}
 
-\begin{minipage}[c]{0.4\textwidth}
-\underline{\bf Identities:} 
-\begin{align*}
-    &\sim (\sim p) \equiv p &&\text{Double Negation} \\
-    &p \wedge \mathbb{T} \equiv p \ \ \ \ p \vee \mathbb{F} \equiv p &&\text{Identity} \\
-    &p \vee \mathbb{T} \equiv \mathbb{T} \ \ \ \ p \wedge \mathbb{F} \equiv \mathbb{F} &&\text{Domination} \\
-    &p \wedge p \equiv p \ \ \ \ p \vee p \equiv p &&\text{Idempotent} \\
-    &p \ \vee \sim p \equiv \mathbb{T} \ \ \ \ p \ \wedge \sim p \equiv \mathbb{F} &&\text{Negation} \\
-    &p \vee q \equiv q \vee p \ \ \ \ p \wedge q \equiv q \wedge p &&\text{Commutative} \\
-    &(p \vee q) \vee r \equiv p \vee (q \vee r) &&\text{Associative} \\
-    &(p \wedge q) \wedge r \equiv p \wedge (q \wedge r) &&\text{Associative} \\
-    &p \vee (q \wedge r) \equiv (p \vee q) \wedge (p \vee r) &&\text{Distributive} \\
-    &p \wedge (q \vee r) \equiv (p \wedge q) \vee (p \wedge r) &&\text{Distributive} \\
-    &\sim (p \wedge q) \equiv \ \sim p \ \vee \sim q &&\text{DeMorgan's} \\
-    &\sim(p \vee q) \equiv \ \sim p \ \wedge \sim q &&\text{DeMorgan's} \\
-    &p \vee (p \wedge q) \equiv p &&\text{Absorption} \\
-    &p \wedge (p \vee q) \equiv p &&\text{Absorption} \\
-    &p \rightarrow q \equiv \ \sim q \rightarrow \ \sim p &&\text{Contrapositive} \\
-    &p \oplus q \equiv q \oplus p &&\text{Contrapositive} \\
-    &p \rightarrow q \equiv \ \sim p \vee q &&\text{Implication} \\
-    &p \leftrightarrow q \equiv (p \rightarrow q) \wedge (q \rightarrow p) &&\text{Biconditional Equivalence} \\
-    &(p \wedge q) \rightarrow r \equiv p \rightarrow (q \rightarrow r) &&\text{Exporation} \\
-    &(p \rightarrow q) \wedge (p \rightarrow \ \sim q) \equiv \ \sim p &&\text{Absurdity} \\
-    &p \vee q \equiv \ \sim p \rightarrow q &&\text{Alternate Implication} \\
-    &p \wedge q \equiv \ \sim(p \rightarrow \ \sim q) &&\text{Alternate Implication} \\
-    &\sim(p \rightarrow q) \equiv p \ \wedge \sim q &&\text{Alternate Implication} \\
-    &\sim \Big( \forall \ x \ P(x) \Big) \equiv \ \exists \ x \ \sim P(x) &&\text{DeMorgan's for Quantifiers} \\
-    &\sim \Big( \exists \ x \ Q(x) \Big) \equiv \ \forall \ x \ \sim Q(x) &&\text{DeMorgan's for Quantifiers} 
-\end{align*}
-\end{minipage}
+\bigskip
+Here is a comparison of set-theoretic versus logical identites (on the next page). Some 
+identities (for example the biconditional) don't seem to translate well, 
+so I have omitted the set-theory version. In the list, 
+$p, q, r$ are propositions, and $A,B, C$ are sets contained in some universal set $\mathbb{U}$. 
+
+
 \newpage
 \newgeometry{top=1in}
 
-\begin{center}\underline{\bf \huge Sets}\end{center}
-\bigskip
-
-\underline{\bf Symbols:} $\in \ \not\in \ \subseteq \ \subset \ \supseteq \ \supset \ \varnothing \ \cup \ \cap \ \times$
-\bigskip
-
-\underline{\bf Common Sets:} 
-\begin{align*}
-    &\mathbb{N} = \{0, 1, 2, 3, \dots\}  &&\text{natural numbers} \\
-    &\mathbb{Z} = \{\dots, -3, -2, -1, 0, 1, 2, 3, \dots \}  &&\text{integers ($\mathbb{Z}$ for German Zahlen, meaning ``numbers")} \\
-    &\mathbb{Z^+} = \{1,2,3,\dots\}  &&\text{positive integers} \\
-    &\mathbb{Q} = \left\{ \dfrac{p}{q} \ \Big| \ p \in \mathbb{Z}, q \in \mathbb{Z}, q \neq 0\right\}  &&\text{rational numbers} \\
-    &\mathbb{U} = \{*\}  &&\text{universal set}
-\end{align*}
-\bigskip
-
-\underline{\bf Identities:}
-\begin{align*}
-    &A \cup \varnothing = A \ \ \ \ A \cap \mathbb{U} = A &&\text{Identity} \\
-    &A \cup \mathbb{U} = \mathbb{U} \ \ \ \ A \cap \mathbb{\varnothing} = \varnothing &&\text{Domination} \\
-    &A \cup A = A \ \ \ \ A \cap A = A &&\text{Idempotent} \\
-    &A \cup A^c = \mathbb{U} \ \ \ \ A \cap A^c = \varnothing &&\text{Complement} \\
-    &A \cup B = B \cup A \ \ \ \ A \cap B = B \cap A &&\text{Commutative} \\
-    &(A \cup B ) \cup C = A \cup (B \cup C) &&\text{Associative} \\
-    &(A \cap B) \cap C = A \cap (B \cap C) &&\text{Associative} \\
-    &A \cap (B \cup C) = (A \cap B) \cup (A \cap C) &&\text{Distributive} \\
-    &A \cup (B \cap C) = (A \cup B) \cap (A \cup C) &&\text{Distributive} \\
-    &(A \cup B)^c = A^c \cap B^c &&\text{DeMorgan's} \\
-    &(A \cap B)^c = A^c \cup B^c &&\text{DeMorgan's} \\
-    &A \cup (A \cap B) = A &&\text{Absorption} \\
-    &A \cap (A \cup B) = A &&\text{Absorption}
-\end{align*}
-\bigskip
-\underline{\bf Symbols:} $\geq \ \leq \ \neq \ \neg \ \sim \ \wedge \ \vee \ \oplus \ \equiv \ \rightarrow \ \leftrightarrow \ \square \ \exists \ \forall$
-\bigskip
-\bigskip
-\begin{center}\underline{\bf Sum Formulas:} \end{center}
 \begin{center}
-\scalebox{1.4}{
-}
+    {\bf Identities in Set Theory vs. Logic}
+
+\begin{tabular}{l|l|l}
+\toprule
+Logic                    & Set Theory                 & Identity \\
+\midrule
+\phantom{h} & \phantom{h} & \phantom{h} \\
+$\sim (\sim p) \equiv p$ &  $(A^c)^c = A$             & Double Negation \\
+\phantom{h} & \phantom{h} & \phantom{h} \\
+$p \wedge \mathbb{T} \equiv p$ \ \ \ \ $p \vee \mathbb{F} \equiv p$  
+& $A \cap \mathbb{U} = A$ \ \ \ \ $A \cup \varnothing = A$ 
+&Identity \\
+\phantom{h} & \phantom{h} & \phantom{h} \\
+$p \vee \mathbb{T} \equiv \mathbb{T}$ \ \ \ \ $p \wedge \mathbb{F} \equiv \mathbb{F}$ 
+& $A \cup \mathbb{U} = \mathbb{U}$ \ \ \ \ $A \cap \mathbb{\varnothing} = \varnothing$ 
+&Domination \\
+\phantom{h} & \phantom{h} & \phantom{h} \\
+$p \wedge p \equiv p$ \ \ \ \ $p \vee p \equiv p$ 
+& $A \cup A = A$  \ \ \ \ $A \cap A = A$ 
+&Idempotent \\
+\phantom{h} & \phantom{h} & \phantom{h} \\
+$p \ \vee \sim p \equiv \mathbb{T}$ \ \ \ \ $p \ \wedge \sim p \equiv \mathbb{F}$ 
+& $A \cup A^c = \mathbb{U}$ \ \ \ \ $A \cap A^c = \varnothing$
+&Negation / Complement \\
+\phantom{h} & \phantom{h} & \phantom{h} \\
+$p \vee q \equiv q \vee p$ \ \ \ \ $p \wedge q \equiv q \wedge p$ 
+&$A \cup B = B \cup A$ \ \ \ \ $A \cap B = B \cap A$
+&Commutative \\
+\phantom{h} & \phantom{h} & \phantom{h} \\
+$(p \vee q) \vee r \equiv p \vee (q \vee r)$ 
+& $(A \cup B ) \cup C = A \cup (B \cup C)$
+&Associative \\
+\phantom{h} & \phantom{h} & \phantom{h} \\
+$(p \wedge q) \wedge r \equiv p \wedge (q \wedge r)$ 
+&$(A \cap B) \cap C = A \cap (B \cap C)$ 
+&Associative \\
+\phantom{h} & \phantom{h} & \phantom{h} \\
+$p \vee (q \wedge r) \equiv (p \vee q) \wedge (p \vee r)$ 
+&$A \cup (B \cap C) = (A \cup B) \cap (A \cup C) $ 
+&Distributive \\
+\phantom{h} & \phantom{h} & \phantom{h} \\
+$p \wedge (q \vee r) \equiv (p \wedge q) \vee (p \wedge r) $
+&$A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$ 
+& Distributive \\
+\phantom{h} & \phantom{h} & \phantom{h} \\
+$\sim (p \wedge q) \equiv \ \sim p \ \vee \sim q $
+&$(A \cap B)^c = A^c \cup B^c $
+&DeMorgan's \\
+\phantom{h} & \phantom{h} & \phantom{h} \\
+$\sim(p \vee q) \equiv \ \sim p \ \wedge \sim q $
+&$(A \cup B)^c = A^c \cap B^c$ 
+&DeMorgan's \\
+\phantom{h} & \phantom{h} & \phantom{h} \\
+$p \vee (p \wedge q) \equiv p $
+&$A \cup (A \cap B) = A$ 
+&Absorption \\
+\phantom{h} & \phantom{h} & \phantom{h} \\
+$p \wedge (p \vee q) \equiv p $
+&$A \cap (A \cup B) = A$
+&Absorption \\
+\phantom{h} & \phantom{h} & \phantom{h} \\
+\bottomrule
+\end{tabular}
 \end{center}
+
+In the following table, the set-theoretic analogs were added by me. 
+Please do not take my word for these--verify them yourself! 
+I do not guarantee that the set-theoretic analogs are correct (although I believe they are). 
+
+\begin{center}
+\bigskip
+    {\bf Other Identities in Set Theory vs. Logic}
+
+\begin{tabular}{l|l|l}
+\toprule
+Logic                    & Set Theory                 & Identity \\
+\midrule
+\phantom{h} & \phantom{h} & \phantom{h} \\
+$p \rightarrow q \equiv \ \sim q \rightarrow \ \sim p$ 
+& $A \subseteq B$ if and only if $B^c \subseteq A^c$ 
+&Contrapositive \\
+\phantom{h} & \phantom{h} & \phantom{h} \\
+$p \rightarrow q \equiv \ \sim p \vee q$ 
+& $A \subseteq B$ if and only if $A^c \cup B = \mathbb{U}$
+&Implication \\
+\phantom{h} & \phantom{h} & \phantom{h} \\
+$(p \rightarrow q) \wedge (p \rightarrow \ \sim q) \equiv \ \sim p$
+&If $A \subseteq B$ and $A \subseteq B^c$ then $A = \varnothing$
+&Absurdity \\
+\phantom{h} & \phantom{h} & \phantom{h} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
 \end{document}
