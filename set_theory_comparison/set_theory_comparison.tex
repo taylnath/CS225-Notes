@@ -2,18 +2,43 @@
 \usepackage[margin=1in, top=15pt]{geometry}
 \usepackage{amsmath, amssymb, xcolor, booktabs, graphicx}
 \title{CS 225}
-\author{Symbols and Formulas}
+\author{Set Theory and Logic}
 \date{Fall 2020}
 
 \begin{document}
 \maketitle
 \hrule
 
-\begin{center}\underline{\bf \huge Logic}\end{center}
+\begin{center}\underline{\bf \huge Comparison of Set Theory and Logic}\end{center}
 \bigskip
 
-\underline{\bf Symbols:} $\geq \ \leq \ \neq \ \neg \ \sim \ \wedge \ \vee \ \oplus \ \equiv \ \rightarrow \ \leftrightarrow \ \square \ \exists \ \forall$
+I find the similarities between set theory and logic to be strikingly accurate:
+both have similar identity laws, distributive laws, DeMorgan's laws, etc. 
+To me the set-theory versions are more intuitive since you can draw venn-diagram
+pictures to reason about the identities, but since we have covered logic first in 
+CS225, perhaps the logical rules are more fresh in everyone's mind. In any case, 
+I think it is useful to compare the two. 
+
 \bigskip
+Here is a table comparing logical symbols/operations to set theoretic ones:
+
+In the table I will refer to two sets $A$ and $B$ which are both contained 
+in some universal set $\mathbb{U}$. You can think of $\mathbb{U}$ as the 
+domain of $x$. 
+
+\begin{center}
+\begin{tabular}{lllll}
+\toprule
+Word & Logic Symbol & Set Theory Symbol & Set Theory Connection  \\
+\midrule
+Or   &     $\vee$   &         $\cup$    &  $\forall \ x \in \mathbb{U}$, $x \in A\cup B$ if and only if $x \in A$ {\bf or} $x\in B$. \\
+And  &     $\wedge$ &         $\cap$    &  $\forall \ x \in \mathbb{U}$, $x \in A \cap B$ if and only if $x \in A$ {\bf and} $x \in B$. \\
+Not  &     $\sim$   &   $\phantom{h}^c$ & $\forall \ x \in \mathbb{U}$, $x\in A^c$ if and only if $x$ is {\bf not} in $A$. \\
+If / then & $\to$   &  $\subseteq$      & ``$A \subseteq B$'' if and only if ``$\forall \ x \in \mathbb{U}$, {\bf if} $x\in A$ {\bf then} $x\in B$.'' \\
+\bottomrule
+\end{tabular}
+\end{center}
+
 
 \begin{minipage}[c]{0.4\textwidth}
 \underline{\bf Identities:} 
@@ -36,7 +61,7 @@
     &p \oplus q \equiv q \oplus p &&\text{Contrapositive} \\
     &p \rightarrow q \equiv \ \sim p \vee q &&\text{Implication} \\
     &p \leftrightarrow q \equiv (p \rightarrow q) \wedge (q \rightarrow p) &&\text{Biconditional Equivalence} \\
-    &(p \wedge q) \rightarrow r \equiv p \rightarrow (q \rightarrow r) &&\text{Exportation} \\
+    &(p \wedge q) \rightarrow r \equiv p \rightarrow (q \rightarrow r) &&\text{Exporation} \\
     &(p \rightarrow q) \wedge (p \rightarrow \ \sim q) \equiv \ \sim p &&\text{Absurdity} \\
     &p \vee q \equiv \ \sim p \rightarrow q &&\text{Alternate Implication} \\
     &p \wedge q \equiv \ \sim(p \rightarrow \ \sim q) &&\text{Alternate Implication} \\
@@ -45,34 +70,6 @@
     &\sim \Big( \exists \ x \ Q(x) \Big) \equiv \ \forall \ x \ \sim Q(x) &&\text{DeMorgan's for Quantifiers} 
 \end{align*}
 \end{minipage}
-{\color{lightgray}\vline}
-\begin{minipage}[t][3.1in][b]{0.4 \textwidth}
-A conditional statement $p \rightarrow q$ can also be read as:
-\begin{itemize}
-    \item If $p$ then $q$ 
-    \item $p$ implies $q$
-    \item If $p$, $q$
-    \item $p$ only if $q$
-    \item $q$ if $p$
-    \item $q$ unless $\sim p$
-    \item $q$ when $p$
-    \item $q$ whenever $p$
-    \item $q$ follows from $p$
-    \item $p$ is a sufficient condition for $q$ ($p$ is sufficient for $q$)
-    \item $q$ is a necessary condition for $p$ ($q$ is necessary for $p$)
-\end{itemize}
-
-\bigskip
-
-\underline{\bf Proofs:}
-\begin{itemize}
-    \item Direct: Assume $P$ and prove $Q$.
-    \item Contrapositive: Assume Not $Q$ and prove Not $P$.
-    \item Contradiction: Assume $P$ and Not $Q$ and prove a contradiction.
-    \item Induction: Prove base(s), assume $P(m)$, prove $P(m+1)$.
-\end{itemize}
-\end{minipage}
-
 \newpage
 \newgeometry{top=1in}
 
@@ -109,90 +106,12 @@ A conditional statement $p \rightarrow q$ can also be read as:
     &A \cap (A \cup B) = A &&\text{Absorption}
 \end{align*}
 \bigskip
-
-\newpage
-\begin{center}\underline{\bf \huge Series and Sums}\end{center}
+\underline{\bf Symbols:} $\geq \ \leq \ \neq \ \neg \ \sim \ \wedge \ \vee \ \oplus \ \equiv \ \rightarrow \ \leftrightarrow \ \square \ \exists \ \forall$
 \bigskip
-
-\underline{\bf Symbols:} $\sum \ \cdot$
-\bigskip
-
-\begin{align*}
-    &\text{Geometric Progression} &&a_k = a \cdot r^k \\ %&&\sum_{k=0}^n a_k = a\cdot \sum_{k=0}^n r^k = a \cdot \dfrac{r^{n+1} - 1}{r-1} \\
-    &\text{Arithmetic Progression} &&a_k = a + d\cdot k \\ %&&\sum_{k=1}^n k = \dfrac{1}{2}(n^2 + n)
-\end{align*}
-
 \bigskip
 \begin{center}\underline{\bf Sum Formulas:} \end{center}
 \begin{center}
 \scalebox{1.4}{
-\begin{tabular}{clll}
-\toprule
-Formula \# & Sum & Closed Form \\ %& Comments \\
-\midrule
-\addlinespace
-\addlinespace
-1 & $\sum\limits_{k=0}^n ar^k \ (r\neq 0)$ & $\dfrac{ar^{n+1} - a}{r-1}, \ r \neq 1$ \\ %& If $r=1$, formula (3) applies. \\
-\addlinespace
-\addlinespace
-2 & $\sum\limits_{k=i}^n ar^k \ (r \neq 0)$ & $\dfrac{ar^{n+1} - ar^i}{r-1}, \ r \neq 1$ \\ %& This sum is the same as $\sum\limits_{k=0}^n ar^k - \sum\limits_{k=0}^{i-1} ar^k$ \\
-\addlinespace
-\addlinespace
-3 & $\sum\limits_{k=i}^n c$ & $c \cdot ( n- i + 1)$ \\ %& Setting $i = 0$ gives $\sum\limits_{k = 0}^n c = c\cdot (n + 1)$ \\ 
-\addlinespace
-\addlinespace
-4 & $\sum\limits_{k=1}^n k$ & $\dfrac{n (n + 1)}{2}$ \\ %& $\sum\limits_{k=0}^n k = \sum\limits_{k=1}^n k$ \\
-\addlinespace
-\addlinespace
-5 & $\sum\limits_{k=1}^n k^2$ & $\dfrac{n(n+1)(2n+1)}{6}$ \\ %& \\
-\addlinespace
-\addlinespace
-6 & $\sum\limits_{k=1}^n k^3$ & $\dfrac{n^2(n+1)^2}{4}$ \\ %& \\
-\addlinespace
-\addlinespace
-\bottomrule
-\end{tabular}
 }
 \end{center}
-
-\newpage
-\begin{center}\underline{\bf \huge Counting}\end{center}
-\bigskip
-
-\underline{\bf Symbols:} $\lambda$
-\bigskip
-
-\underline{\bf Equations:}
-\begin{itemize}
-    \item Sum Rule: 
-    
-    if $S$ is the union of $m$ disjoint sets $S_1, S_2, \dots, S_m$, then the number of elements in $S$ is: 
-$$ S = |S_1| + |S_2| + \dots + |S_m| $$
-    \item Product Rule: 
-    
-    for a sequence of $m$ choices the total number of elements is: 
-$$ P(m) = |P_1|\cdot |P_2| \cdot \dots \cdot |P_m| $$
-    \item Subset Exclusion: 
-    
-    if $C = A - B$ is the difference of two sets, where $B \subseteq A$, then the number of elements in $C$ is:
-$$ |C| = |A| - |B| $$
-    \item Inclusion/Exclusion: 
-    
-    when a set $D$ to be counted is the union of non-disjoint sets $A$ and $B$, the number of elements in $D$ is:
-$$ |D| = |A| + |B| - |A\cap B| $$
-\end{itemize}
-\bigskip
-
-\underline{\bf Permutations and Combinations:}
-\begin{itemize}
-    \item $r$-permutations: $P(n,r) = \dfrac{n!}{(n-r)!}$
-    \item $r$-permutations with repetition allowed: $n^r$
-    \item The number of different permutations of $n$ objects, where there are $n_1$
-indistinguishable objects of type 1, and $n_2$ indistinguishable objects
-of type 2, \dots and $n_k$ indistinguishable objects of type $k$ is $\dfrac{n!}{n_1! n_2! \dots n_k!}$
-    \item $r$-combinations $C(n,r) = \dfrac{n!}{r!(n-r)!}$
-    \item $r$-combinations with repetition allowed: 
-    $$C(n+r-1,r) = \dfrac{(n+r-1)!}{r!(n+r-1-r)!} = \dfrac{(n+r-1)!}{r!(n-1)!}$$
-\end{itemize}
-
 \end{document}
