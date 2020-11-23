@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage[margin=1in, top=15pt]{geometry}
-\usepackage{amsmath, amssymb, xcolor, booktabs, graphicx, tikz}
+\usepackage{amsmath, amssymb, xcolor, booktabs, graphicx, tikz, enumitem}
 \usetikzlibrary{graphs, graphs.standard, quotes}
 \title{CS 225}
 \author{Graph Theory}
@@ -196,4 +196,139 @@ $K_{3, 2}$ is shown below:
         };
     \end{tikzpicture}
 \end{center}
+
+\begin{center}
+    \underline{\bf From Chapter 10:}
+\end{center}
+
+Let $G$ be a graph, and let $v$ and $w$ be vertices of $G$. A {\bf walk from 
+$v$ to $w$} is a finite alternating sequence of adjacent vertices and edges of 
+$G$. A walk has the form $v_0 e_1 v_1 e_2 \dots e_n v_n$. The {\bf trivial walk} 
+from $v$ to $v$ consists of the single vertex $v$. 
+
+In the graph below, $v_1 e_1 v_2 e_2 v_3$ is a walk from $v_1$ to $v_3$. Another 
+walk from $v_1$ to $v_3$ is $v_1 e_3 v_3$. 
+
+\begin{center}
+    \begin{tikzpicture}
+        \graph[math nodes] {
+        v_1 -- ["$e_1$"] v_2 -- ["$e_2$"]  v_3;
+        v_1 -- ["$e_3$", bend right, swap]  v_3;
+        };
+    \end{tikzpicture}
+\end{center}
+
+A {\bf trail} from $v$ to $w$ is a walk from $v$ to $w$ with no repeated edge. 
+In the graph below, $v e_1 v$ is a trail from $v$ to $v$. 
+\begin{center}
+    \begin{tikzpicture}
+        \graph[math nodes] {
+        v -- ["$e_1$", loop] v;
+        };
+    \end{tikzpicture}
+\end{center}
+
+\bigskip
+A {\bf path} from $v$ to $w$ is a trail that does not contain a repeated vertex. 
+In the graph above, the trail from $v$ to $v$ $v e_1 v$ is not a path, but the 
+trivial walk is a path. 
+
+\bigskip 
+A {\bf closed walk} is a walk that starts and ends at the same vertex. 
+
+\bigskip 
+A {\bf circuit} is a closed walk that contains at least one edge and does not 
+contain a repeated edge. 
+
+\bigskip
+A {\bf simple circuit} is a circuit that does not have any other repeated vertex 
+except the first and last. 
+
+\bigskip
+A graph $H$ is said to be a {\bf subgraph} of a graph $G$ if and only if every 
+vertex in $H$ is also a vertex in $G$ (i.e. $V(H) \subseteq V(G)$), every 
+edge in $H$ is also an edge in $G$, and every edge in $H$ has the same endpoints 
+as it has in $G$ (i.e. $E(H) \subseteq E(G)$). 
+
+\bigskip
+Let $G$ be a graph. Two vertices $v$ and $w$ of $G$ are {\bf connected} if and 
+only if there is a walk from $v$ to $w$. The graph $G$ is {\bf connected } if and only if 
+all pairs of vertices in $G$ are connected. 
+
+\bigskip
+{\bf Lemma 10.1.1} Let $G$ be a graph. Then 
+\begin{enumerate}[label=\alph*.]
+    \item If $G$ is connected, then any two distinct vertices of $G$ can be 
+    connected by a path. 
+    \item If vertices $v$ and $w$ are part of a circuit in $G$ and one edge is 
+    removed from the circuit, then there still exists a trail from $v$ to $w$ 
+    in $G$. 
+    \item If $G$ is connected and $G$ contains a circuit, then an edge of the 
+    circuit can be removed without disconnecting $G$. 
+\end{enumerate}
+
+\bigskip
+A {\bf connected component} of a graph is a connected subgraph of largest possible 
+size. 
+
+\bigskip 
+A graph $H$ is a {\bf connected component} of a graph $G$ if and only if 
+\begin{enumerate}
+    \item $H$ is a subgraph of $G$.
+    \item $H$ is connected. 
+    \item no connected subgraph of $G$ has $H$ as a subgraph and contains 
+    vertices or edges that are not in $H$. 
+\end{enumerate}
+
+\bigskip
+Let $G$ be a graph. An {\bf Euler circuit} for $G$ is a circuit that contains 
+every vertex and every edge of $G$. That is, an Euler circuit for $G$ is a sequence 
+of adjacent vertices and edges in $G$ that has at least ne edge, starts and ends 
+at the same vertex, uses every vertex of $G$ at least once, and uses every edge of 
+$G$ exactly once. 
+
+\bigskip
+{\bf Theorem 10.1.2:} If a graph has an Euler circuit, then every vertex of the 
+graph has positive even degree. Therefore if some vertex of a graph has odd 
+degree, then the graph does not have an Euler circuit. 
+
+\bigskip
+{\bf Theorem 10.1.3:} If a graph $G$ is connected and the degree of every 
+vertex of $G$ is  positive even integer, then $G$ has an Euler circuit. 
+
+\bigskip
+{\bf Theorem 10.1.4:} A graph $G$ has an Euler circuit if and only if $G$ 
+is connected and every vertex of $G$ has positive even degree. 
+
+\bigskip
+Let $G$ be a graph, and let $v$ and $w$ be two distinct vertices of $G$. An 
+{\bf Euler trail} from $v$ to $w$ is a sequence of adjacent edges and vertices 
+that starts at $v$, ends at $w$, passes through every vertex of $G$ at least 
+once, and traverses every edge of $G$ exactly once. 
+
+\bigskip
+{\bf Corollary 10.1.5:}{
+    Let $G$ be a graph, and let $v$ and $w$ be two distinct vertices of $G$. 
+    There is an Euler trail from $v$ to $w$ if and only if $G$ is connected, 
+    $v$ and $w$ have odd degree, and all other vertices of $G$ have positive 
+    even degree. 
+}
+
+\bigskip
+Given a graph $G$, a {\bf Hamiltonian circuit} for $G$ is a simple circuit 
+that includes every vertex of $G$. That is, a Hamiltonian circuit for $G$ is a 
+sequence of adjacent vertices  and distinct edges in which every vertex of $G$ 
+appears exactly once, except for the first and last, which are the same. 
+
+\bigskip 
+{\bf Proposition 10.1.6:} 
+If a graph $G$ has a Hamiltonian circuit, then $G$ has a subgraph $H$ with 
+the following properties:
+\begin{enumerate}
+    \item $H$ contains every vertex of $G$
+    \item $H$ is connected 
+    \item $H$ has the same number of edges as vertices. 
+    \item Every vertex of $H$ has degree 2. 
+\end{enumerate}
+
 \end{document}
